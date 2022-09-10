@@ -1,0 +1,38 @@
+grammar;
+
+match {
+    r"[A-Z]+"
+} else {
+    r#""[a-zA-Z0-9 ]+""#,
+    r"[a-zA-Z0-9]+",
+    _
+}
+
+pub Name = Comma<Term>;
+
+Term: (&'input str, &'input str) = {
+    <k:Key> "=" <v:Value> => (k, v),
+};
+
+Value: &'input str = {
+    <s:r"[A-Z]+"> => s,
+    <s:r"[a-zA-Z0-9]+"> => s,
+    <s:r#""[a-zA-Z0-9 ]+""#> => {
+        &s[1..s.len() - 1]
+    }
+};
+
+Key: &'input str = {
+    <s:r"[A-Z]+"> => s
+};
+
+Comma<T>: Vec<T> = {
+    <mut v:(<T> ",")*> <e:T?> => match e {
+        None => v,
+        Some(e) => {
+            v.push(e);
+            v
+        }
+    }
+};
+

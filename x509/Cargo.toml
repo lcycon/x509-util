@@ -1,0 +1,37 @@
+[package]
+name = "x509"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["rsa", "all-curves"]
+all-curves = ["p256", "p384"]
+ecdsa = ["dep:ecdsa"]
+p256 = ["ecdsa", "dep:p256"]
+p384 = ["ecdsa", "dep:p384"]
+rsa = ["dep:rsa"]
+
+[dependencies]
+async-trait = "0.1.57"
+chrono = "0.4.22"
+clap = { version = "3.2.22", features = ["derive"] }
+clap_complete = "3.2.5"
+color-eyre = "0.6.2"
+ecdsa = { version = "0.14.7", features = ["pem", "pkcs8"], optional = true }
+lalrpop-util = "0.19.8"
+p256 = { version = "0.11.1", features = ["pem"], optional = true }
+p384 = { version = "0.11.2", features = ["pem"], optional = true }
+pkcs8 = { version = "0.9.0", features = ["pem", "std"] }
+rand_core = "0.6.4"
+rsa = { version = "0.6.1", optional = true }
+sha2 = "0.10.6"
+spki = "0.6.0"
+thiserror = "1.0.36"
+tokio = { version = "1.21.1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.36"
+tracing-subscriber = { version = "0.3.15", features = ["env-filter"] }
+x509-util = { path = "../x509-util" }
+xdg = "2.4.1"
+
+[build-dependencies]
+lalrpop = "0.19.8"

@@ -27,7 +27,7 @@ async fn main() -> Result<()> {
 
     match cli.command {
         cli::Commands::Generate => {
-            let mut app = cli::Cli::into_app();
+            let mut app = cli::Cli::command();
             let data = xdg::BaseDirectories::new()?.get_data_home();
             let dir = data.join("fish/vendor_completions.d");
 

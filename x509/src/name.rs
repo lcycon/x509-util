@@ -7,7 +7,7 @@ lalrpop_mod!(
     name_parser
 );
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct OwnedName(pub Vec<(String, String)>);
 
 impl OwnedName {

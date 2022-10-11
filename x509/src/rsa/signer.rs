@@ -5,7 +5,7 @@ use rsa::{
     rand_core::OsRng,
     RsaPrivateKey, RsaPublicKey,
 };
-use sha2::{digest::DynDigest, Digest};
+use sha2::Digest;
 use spki::{AlgorithmIdentifier, SubjectPublicKeyInfo};
 use thiserror::Error;
 use x509_util::{algorithm_identifier, prelude::Context, signer::Signer};
@@ -20,8 +20,6 @@ pub enum SignerError {
     Rsa(rsa::errors::Error),
     #[error("RSA internal error. This is usually because you have selected an RSA key size too small for the hash mode.")]
     RsaInternal(rsa::errors::Error),
-    #[error("RSA PKCS8 error: {0}")]
-    RsaPkcs8(#[from] rsa::pkcs8::spki::Error),
     #[error("x509-util error: {0}")]
     X509Util(#[from] x509_util::error::Error),
 }
@@ -95,31 +93,25 @@ impl RsaSigner {
     }
 
     fn as_padding_scheme(&self) -> rsa::PaddingScheme {
-        let digest: Box<dyn DynDigest> = match self.hash_mode {
-            HashMode::SHA256 => Box::new(sha2::Sha256::new()),
-            HashMode::SHA384 => Box::new(sha2::Sha384::new()),
-            HashMode::SHA512 => Box::new(sha2::Sha512::new()),
-        };
-
-        let hash = match self.hash_mode {
-            HashMode::SHA256 => rsa::Hash::SHA2_256,
-            HashMode::SHA384 => rsa::Hash::SHA2_384,
-            HashMode::SHA512 => rsa::Hash::SHA2_512,
-        };
-
-        let salt_len = match self.hash_mode {
-            HashMode::SHA256 => 256 / 8,
-            HashMode::SHA384 => 384 / 8,
-            HashMode::SHA512 => 512 / 8,
-        };
-
-        match self.mode {
-            RSASigningMode::Pkcs1v15 => rsa::PaddingScheme::PKCS1v15Sign { hash: Some(hash) },
-            RSASigningMode::Pss => rsa::PaddingScheme::PSS {
-                salt_rng: Box::new(OsRng),
-                digest,
-                salt_len: Some(salt_len),
-            },
+        match (self.mode, self.hash_mode) {
+            (RSASigningMode::Pkcs1v15, HashMode::SHA256) => {
+                rsa::PaddingScheme::new_pkcs1v15_sign::<sha2::Sha256>()
+            }
+            (RSASigningMode::Pkcs1v15, HashMode::SHA384) => {
+                rsa::PaddingScheme::new_pkcs1v15_sign::<sha2::Sha384>()
+            }
+            (RSASigningMode::Pkcs1v15, HashMode::SHA512) => {
+                rsa::PaddingScheme::new_pkcs1v15_sign::<sha2::Sha512>()
+            }
+            (RSASigningMode::Pss, HashMode::SHA256) => {
+                rsa::PaddingScheme::new_pss::<sha2::Sha256>()
+            }
+            (RSASigningMode::Pss, HashMode::SHA384) => {
+                rsa::PaddingScheme::new_pss::<sha2::Sha384>()
+            }
+            (RSASigningMode::Pss, HashMode::SHA512) => {
+                rsa::PaddingScheme::new_pss::<sha2::Sha512>()
+            }
         }
     }
 }

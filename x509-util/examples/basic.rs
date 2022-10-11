@@ -2,10 +2,8 @@ use async_trait::async_trait;
 use chrono::{Datelike, TimeZone};
 use p384::ecdsa::{signature::Signer as P384Signer, SigningKey, VerifyingKey};
 use pkcs8::EncodePublicKey;
-use rsa::{
-    pkcs8::EncodePublicKey as RsaEncodePublicKey, rand_core::OsRng, RsaPrivateKey, RsaPublicKey,
-};
-use sha2::Digest;
+use rsa::{rand_core::OsRng, RsaPrivateKey};
+use sha2::Sha512;
 use spki::{self, AlgorithmIdentifier};
 use tokio::main;
 use x509_cert::{ext::pkix::KeyUsages, Certificate, TbsCertificate};
@@ -52,14 +50,15 @@ impl Signer for KeyPair {
 }
 
 struct RsaKeyPair {
-    key: RsaPrivateKey,
-    public_key: RsaPublicKey,
+    key: rsa::pkcs1v15::SigningKey<Sha512>,
+    public_key: rsa::pkcs1v15::VerifyingKey<Sha512>,
 }
 
 impl RsaKeyPair {
     pub fn random() -> Self {
-        let private = RsaPrivateKey::new(&mut OsRng, 2048).unwrap();
-        let public = private.to_public_key();
+        let private: rsa::pkcs1v15::SigningKey<Sha512> =
+            RsaPrivateKey::new(&mut OsRng, 2048).unwrap().into();
+        let public = (&private).into();
 
         RsaKeyPair {
             key: private,
@@ -73,16 +72,7 @@ impl Signer for RsaKeyPair {
     type Err = std::io::Error;
 
     async fn sign<T: AsRef<[u8]> + Send>(&self, data: T) -> Result<Vec<u8>, Self::Err> {
-        let hash = sha2::Sha512::digest(data);
-        Ok(self
-            .key
-            .sign(
-                rsa::PaddingScheme::PKCS1v15Sign {
-                    hash: Some(rsa::Hash::SHA2_512),
-                },
-                hash.as_ref(),
-            )
-            .unwrap())
+        Ok(self.key.sign(data.as_ref()).to_vec())
     }
 
     async fn signature_algorithm(&self) -> Result<AlgorithmIdentifier<'static>, Self::Err> {

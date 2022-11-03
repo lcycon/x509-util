@@ -14,7 +14,13 @@
       in
       rec {
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ rustup rust-analyzer ];
+          buildInputs = with pkgs; [
+            rustup
+            rust-analyzer
+          ]
+          ++ lib.optionals (system == "aarch64-darwin") [
+            libiconv
+          ];
         };
       }
     );

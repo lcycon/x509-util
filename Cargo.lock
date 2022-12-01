@@ -1797,6 +1797,7 @@ dependencies = [
  "flagset",
  "lazy_static",
  "p384",
+ "pkcs1",
  "pkcs8",
  "rand",
  "rsa",

@@ -12,9 +12,9 @@ use crate::{
 pub struct Name;
 
 impl Name {
-    pub fn from_pairs<'a, 'b, T: AsRef<str>, U: AsRef<str>>(
+    pub fn from_pairs<'a, T: AsRef<str>, U: AsRef<str>>(
         context: &'a Context,
-        pairs: &'b [(T, U)],
+        pairs: &[(T, U)],
     ) -> Result<x509_cert::name::Name<'a>> {
         let mut rdns = Vec::with_capacity(pairs.len());
 

@@ -10,9 +10,9 @@ use crate::{
 pub struct SubjectPublicKeyInfo;
 
 impl SubjectPublicKeyInfo {
-    pub fn from_der<'a, 'b>(
+    pub fn from_der<'a>(
         context: &'a Context,
-        bytes: &'b [u8],
+        bytes: &[u8],
     ) -> Result<spki::SubjectPublicKeyInfo<'a>> {
         Ok(spki::SubjectPublicKeyInfo::from_der(
             bytes.alloc_into(context),

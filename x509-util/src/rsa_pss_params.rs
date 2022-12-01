@@ -1,8 +1,7 @@
 use const_oid::db::rfc5912::ID_MGF_1;
-use der::{Encode, Sequence};
+use der::Encode;
+use pkcs1::{RsaPssParams, TrailerField};
 use spki::AlgorithmIdentifier;
-
-const TRAILER: u8 = 1u8;
 
 const SALT_LEN_32: u8 = 32;
 const SALT_LEN_48: u8 = 48;
@@ -43,24 +42,12 @@ lazy_static::lazy_static! {
         parameters: Some(SHA2_512_BYTES.as_slice().try_into().unwrap()),
     };
 
-    pub static ref PSS_MGF1_SHA256: RsaPssParams<'static> = RsaPssParams { hash: SHA2_256, mask_gen: *MGF1_SHA256, salt_len: SALT_LEN_32, trailer_field: TRAILER };
+    pub static ref PSS_MGF1_SHA256: RsaPssParams<'static> = RsaPssParams { hash: SHA2_256, mask_gen: *MGF1_SHA256, salt_len: SALT_LEN_32, trailer_field: TrailerField::BC };
     pub static ref PSS_MGF1_SHA256_DER: Vec<u8> = PSS_MGF1_SHA256.to_vec().unwrap();
 
-    pub static ref PSS_MGF1_SHA384: RsaPssParams<'static> = RsaPssParams { hash: SHA2_384, mask_gen: *MGF1_SHA384, salt_len: SALT_LEN_48, trailer_field: TRAILER };
+    pub static ref PSS_MGF1_SHA384: RsaPssParams<'static> = RsaPssParams { hash: SHA2_384, mask_gen: *MGF1_SHA384, salt_len: SALT_LEN_48, trailer_field: TrailerField::BC };
     pub static ref PSS_MGF1_SHA384_DER: Vec<u8> = PSS_MGF1_SHA384.to_vec().unwrap();
 
-    pub static ref PSS_MGF1_SHA512: RsaPssParams<'static> = RsaPssParams { hash: SHA2_512, mask_gen: *MGF1_SHA512, salt_len: SALT_LEN_64, trailer_field: TRAILER };
+    pub static ref PSS_MGF1_SHA512: RsaPssParams<'static> = RsaPssParams { hash: SHA2_512, mask_gen: *MGF1_SHA512, salt_len: SALT_LEN_64, trailer_field: TrailerField::BC };
     pub static ref PSS_MGF1_SHA512_DER: Vec<u8> = PSS_MGF1_SHA512.to_vec().unwrap();
-}
-
-#[derive(Sequence)]
-pub struct RsaPssParams<'a> {
-    #[asn1(context_specific = "0")]
-    pub hash: AlgorithmIdentifier<'a>,
-    #[asn1(context_specific = "1")]
-    pub mask_gen: AlgorithmIdentifier<'a>,
-    #[asn1(context_specific = "2")]
-    pub salt_len: u8,
-    #[asn1(context_specific = "3")]
-    pub trailer_field: u8,
 }

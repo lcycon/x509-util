@@ -105,7 +105,9 @@ async fn ca(context: &Context) -> (KeyPair, Certificate) {
     let key_pair: KeyPair = KeyPair::random();
 
     let now = chrono::Utc::now();
-    let not_before = chrono::Utc.ymd(now.year(), 1, 1).and_hms(0, 0, 0);
+    let not_before = chrono::Utc
+        .with_ymd_and_hms(now.year(), 1, 1, 0, 0, 0)
+        .unwrap();
     let not_after = not_before.clone().with_year(now.year() + 10).unwrap();
     let validity: Validity = (not_before..not_after).into();
 
@@ -151,7 +153,9 @@ async fn leaf<'a>(
     let key_pair: RsaKeyPair = RsaKeyPair::random();
 
     let now = chrono::Utc::now();
-    let not_before = chrono::Utc.ymd(now.year(), 1, 1).and_hms(0, 0, 0);
+    let not_before = chrono::Utc
+        .with_ymd_and_hms(now.year(), 1, 1, 0, 0, 0)
+        .unwrap();
     let not_after = not_before.clone().with_year(now.year() + 10).unwrap();
     let validity: Validity = (not_before..not_after).into();
 

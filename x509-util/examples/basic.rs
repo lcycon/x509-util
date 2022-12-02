@@ -108,7 +108,7 @@ async fn ca(context: &Context) -> (KeyPair, Certificate) {
     let not_before = chrono::Utc
         .with_ymd_and_hms(now.year(), 1, 1, 0, 0, 0)
         .unwrap();
-    let not_after = not_before.clone().with_year(now.year() + 10).unwrap();
+    let not_after = not_before.clone().with_year(now.year() + 60).unwrap();
     let validity: Validity = (not_before..not_after).into();
 
     let name = Name::from_pairs(context, &[("C", "US"), ("ST", "CA"), ("CN", "ca")]).unwrap();

@@ -20,7 +20,7 @@ color-eyre = "0.6.2"
 ecdsa = { version = "0.15.0", features = ["pem", "pkcs8"], optional = true }
 lalrpop-util = "0.19.8"
 p256 = { version = "0.11.1", features = ["pem"], optional = true }
-p384 = { version = "0.11.2", features = ["pem"], optional = true }
+p384 = { version = "0.12.0", features = ["pem"], optional = true }
 pkcs8 = { version = "0.9.0", features = ["pem", "std"] }
 rand_core = "0.6.4"
 rsa = { version = "0.7.2", optional = true }

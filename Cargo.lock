@@ -446,7 +446,7 @@ dependencies = [
  "der",
  "elliptic-curve",
  "rfc6979",
- "signature 2.0.0",
+ "signature",
 ]
 
 [[package]]
@@ -834,9 +834,9 @@ dependencies = [
 
 [[package]]
 name = "num-bigint-dig"
-version = "0.8.1"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "566d173b2f9406afbc5510a90925d5a2cd80cae4605631f1212303df265de011"
+checksum = "2399c9463abc5f909349d8aa9ba080e0b88b3ce2885389b60b993f39b1a56905"
 dependencies = [
  "byteorder",
  "lazy_static",
@@ -1184,9 +1184,9 @@ dependencies = [
 
 [[package]]
 name = "rsa"
-version = "0.7.2"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "094052d5470cbcef561cb848a7209968c9f12dfa6d668f4bca048ac5de51099c"
+checksum = "b5f00ae0c56ed2d34b86fc8f1c02e809dd455382de72e1dd08f7d1ced356bf59"
 dependencies = [
  "byteorder",
  "digest",
@@ -1197,8 +1197,7 @@ dependencies = [
  "pkcs1",
  "pkcs8",
  "rand_core",
- "signature 1.6.4",
- "smallvec",
+ "signature",
  "subtle",
  "zeroize",
 ]
@@ -1284,16 +1283,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "900fba806f70c630b0a382d0d825e17a0f19fcd059a2ade1ff237bcddf446b31"
 dependencies = [
  "lazy_static",
-]
-
-[[package]]
-name = "signature"
-version = "1.6.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74233d3b3b2f6d4b006dc19dee745e73e2a6bfb6f93607cd3b02bd5b00797d7c"
-dependencies = [
- "digest",
- "rand_core",
 ]
 
 [[package]]

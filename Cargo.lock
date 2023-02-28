@@ -1832,7 +1832,7 @@ dependencies = [
  "bumpalo-herd",
  "chrono",
  "const-oid",
- "der 0.6.1",
+ "der 0.7.0",
  "flagset",
  "lazy_static",
  "p384",

@@ -481,7 +481,7 @@ dependencies = [
  "group",
  "hkdf",
  "pem-rfc7468 0.6.0",
- "pkcs8",
+ "pkcs8 0.9.0",
  "rand_core",
  "sec1",
  "subtle",
@@ -1037,7 +1037,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eff33bdbdfc54cc98a2eca766ebdec3e1b8fb7387523d5c9c9a2891da856f719"
 dependencies = [
  "der 0.6.1",
- "pkcs8",
+ "pkcs8 0.9.0",
  "spki 0.6.0",
  "zeroize",
 ]
@@ -1060,6 +1060,16 @@ checksum = "9eca2c590a5f85da82668fa685c09ce2888b9430e83299debf1f34b65fd4a4ba"
 dependencies = [
  "der 0.6.1",
  "spki 0.6.0",
+]
+
+[[package]]
+name = "pkcs8"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e34154ec92c136238e7c210443538e64350962b8e2788cadcf5f781a6da70c36"
+dependencies = [
+ "der 0.7.0",
+ "spki 0.7.0",
 ]
 
 [[package]]
@@ -1225,7 +1235,7 @@ dependencies = [
  "num-iter",
  "num-traits",
  "pkcs1 0.4.1",
- "pkcs8",
+ "pkcs8 0.9.0",
  "rand_core",
  "signature",
  "subtle",
@@ -1279,7 +1289,7 @@ dependencies = [
  "base16ct",
  "der 0.6.1",
  "generic-array",
- "pkcs8",
+ "pkcs8 0.9.0",
  "subtle",
  "zeroize",
 ]
@@ -1811,7 +1821,7 @@ dependencies = [
  "lalrpop-util",
  "p256",
  "p384",
- "pkcs8",
+ "pkcs8 0.10.0",
  "rand_core",
  "rsa",
  "sha2",
@@ -1849,7 +1859,7 @@ dependencies = [
  "lazy_static",
  "p384",
  "pkcs1 0.7.0",
- "pkcs8",
+ "pkcs8 0.10.0",
  "rand",
  "rsa",
  "sha1",

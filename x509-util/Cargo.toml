@@ -15,7 +15,7 @@ der = "0.7.0"
 flagset = "0.4.3"
 lazy_static = "1.4.0"
 pkcs1 = "0.7.0"
-pkcs8 = { version = "0.10.0", features = ["pem"] }
+pkcs8 = { version = "0.10.1", features = ["pem"] }
 rand = "0.8.5"
 sha1 = "0.10.4"
 spki = { version = "0.7.0", features = ["alloc", "pem", "std"] }

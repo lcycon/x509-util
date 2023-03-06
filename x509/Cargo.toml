@@ -21,7 +21,7 @@ ecdsa = { version = "0.16.0", features = ["pem", "pkcs8"], optional = true }
 lalrpop-util = "0.19.8"
 p256 = { version = "0.13.0", features = ["pem"], optional = true }
 p384 = { version = "0.13.0", features = ["pem"], optional = true }
-pkcs8 = { version = "0.10.0", features = ["pem", "std"] }
+pkcs8 = { version = "0.10.1", features = ["pem", "std"] }
 rand_core = "0.6.4"
 rsa = { version = "0.8.2", optional = true }
 sha2 = { version = "0.10.6", features = ["oid"] }

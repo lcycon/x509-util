@@ -23,7 +23,7 @@ thiserror = "1.0.39"
 x509-cert = { version = "0.1.1", features = ["alloc", "pem", "std"] }
 
 [dev-dependencies]
-p384 = "0.12.0"
+p384 = "0.13.0"
 rsa = "0.8.2"
 sha2 = "0.10.5"
 tokio = { version = "1.26.0", features = ["rt-multi-thread", "macros"] }

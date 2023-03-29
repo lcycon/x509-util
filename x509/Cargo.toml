@@ -17,7 +17,7 @@ chrono = "0.4.24"
 clap = { version = "4.1.14", features = ["derive"] }
 clap_complete = "4.1.6"
 color-eyre = "0.6.2"
-ecdsa = { version = "0.16.1", features = ["pem", "pkcs8"], optional = true }
+ecdsa = { version = "0.16.2", features = ["pem", "pkcs8"], optional = true }
 lalrpop-util = "0.19.9"
 p256 = { version = "0.13.0", features = ["pem"], optional = true }
 p384 = { version = "0.13.0", features = ["pem"], optional = true }

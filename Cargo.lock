@@ -417,9 +417,9 @@ dependencies = [
 
 [[package]]
 name = "der"
-version = "0.7.1"
+version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc906908ea6458456e5eaa160a9c08543ec3d1e6f71e2235cedd660cb65f9df0"
+checksum = "19c5cb402c5c958281c7c0702edea7b780d03b86b606497ca3a10fcd3fc393ac"
 dependencies = [
  "const-oid",
  "pem-rfc7468 0.7.0",
@@ -503,7 +503,7 @@ version = "0.16.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "644d3b8674a5fc5b929ae435bca85c2323d85ccb013a5509c2ac9ee11a6284ba"
 dependencies = [
- "der 0.7.1",
+ "der 0.7.2",
  "elliptic-curve",
  "rfc6979",
  "signature",
@@ -1088,7 +1088,7 @@ version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "178ba28ece1961eafdff1991bd1744c29564cbab5d803f3ccb4a4895a6c550a7"
 dependencies = [
- "der 0.7.1",
+ "der 0.7.2",
  "spki 0.7.0",
 ]
 
@@ -1108,7 +1108,7 @@ version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d2820d87d2b008616e5c27212dd9e0e694fb4c6b522de06094106813328cb49"
 dependencies = [
- "der 0.7.1",
+ "der 0.7.2",
  "spki 0.7.0",
 ]
 
@@ -1326,7 +1326,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "48518a2b5775ba8ca5b46596aae011caa431e6ce7e4a67ead66d92f08884220e"
 dependencies = [
  "base16ct",
- "der 0.7.1",
+ "der 0.7.2",
  "generic-array",
  "pkcs8 0.10.1",
  "subtle",
@@ -1409,7 +1409,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0445c905640145c7ea8c1993555957f65e7c46d0535b91ba501bc9bfc85522f"
 dependencies = [
  "base64ct",
- "der 0.7.1",
+ "der 0.7.2",
 ]
 
 [[package]]
@@ -1934,7 +1934,7 @@ dependencies = [
  "bumpalo-herd",
  "chrono",
  "const-oid",
- "der 0.7.1",
+ "der 0.7.2",
  "flagset",
  "lazy_static",
  "p384",

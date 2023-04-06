@@ -18,7 +18,7 @@ pkcs1 = "0.7.1"
 pkcs8 = { version = "0.10.1", features = ["pem"] }
 rand = "0.8.5"
 sha1 = "0.10.4"
-spki = { version = "0.7.0", features = ["alloc", "pem", "std"] }
+spki = { version = "0.7.1", features = ["alloc", "pem", "std"] }
 thiserror = "1.0.40"
 x509-cert = { version = "0.1.1", features = ["alloc", "pem", "std"] }
 

@@ -14,7 +14,7 @@ const-oid = { version = "0.9.2", features = ["db", "std"] }
 der = "0.7.3"
 flagset = "0.4.3"
 lazy_static = "1.4.0"
-pkcs1 = "0.7.1"
+pkcs1 = "0.7.2"
 pkcs8 = { version = "0.10.2", features = ["pem"] }
 rand = "0.8.5"
 sha1 = "0.10.4"

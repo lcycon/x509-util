@@ -1085,9 +1085,9 @@ dependencies = [
 
 [[package]]
 name = "pkcs1"
-version = "0.7.3"
+version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a80397ccad3b40508254eee787bcd28ba48cb82710de5b33cc40c5b2c21bde9"
+checksum = "d3ce26b0b17dba4162c14a5ce7c3d2af94823a666324ce2dc6e5113b9d31884e"
 dependencies = [
  "der 0.7.4",
  "spki 0.7.1",
@@ -2005,7 +2005,7 @@ dependencies = [
  "flagset",
  "lazy_static",
  "p384",
- "pkcs1 0.7.3",
+ "pkcs1 0.7.4",
  "pkcs8 0.10.2",
  "rand",
  "rsa",

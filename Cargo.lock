@@ -501,7 +501,7 @@ dependencies = [
  "group",
  "hkdf",
  "pem-rfc7468 0.7.0",
- "pkcs8 0.10.2",
+ "pkcs8",
  "rand_core",
  "sec1",
  "subtle",
@@ -1053,34 +1053,13 @@ checksum = "e0a7ae3ac2f1173085d398531c705756c94a4c56843785df85a60c1a0afac116"
 
 [[package]]
 name = "pkcs1"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eff33bdbdfc54cc98a2eca766ebdec3e1b8fb7387523d5c9c9a2891da856f719"
-dependencies = [
- "der 0.6.1",
- "pkcs8 0.9.0",
- "spki 0.6.0",
- "zeroize",
-]
-
-[[package]]
-name = "pkcs1"
 version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c8ffb9f10fa047879315e6625af03c164b16962a5368d724ed16323b68ace47f"
 dependencies = [
  "der 0.7.5",
+ "pkcs8",
  "spki 0.7.1",
-]
-
-[[package]]
-name = "pkcs8"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9eca2c590a5f85da82668fa685c09ce2888b9430e83299debf1f34b65fd4a4ba"
-dependencies = [
- "der 0.6.1",
- "spki 0.6.0",
 ]
 
 [[package]]
@@ -1242,18 +1221,19 @@ dependencies = [
 
 [[package]]
 name = "rsa"
-version = "0.8.2"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "55a77d189da1fee555ad95b7e50e7457d91c0e089ec68ca69ad2989413bbdab4"
+checksum = "3dd2017d3e6d67384f301f8b06fbf4567afc576430a61624d845eb04d2b30a72"
 dependencies = [
  "byteorder",
+ "const-oid",
  "digest",
  "num-bigint-dig",
  "num-integer",
  "num-iter",
  "num-traits",
- "pkcs1 0.4.1",
- "pkcs8 0.9.0",
+ "pkcs1",
+ "pkcs8",
  "rand_core",
  "signature",
  "subtle",
@@ -1307,7 +1287,7 @@ dependencies = [
  "base16ct",
  "der 0.7.5",
  "generic-array",
- "pkcs8 0.10.2",
+ "pkcs8",
  "subtle",
  "zeroize",
 ]
@@ -1945,7 +1925,7 @@ dependencies = [
  "lalrpop-util",
  "p256",
  "p384",
- "pkcs8 0.10.2",
+ "pkcs8",
  "rand_core",
  "rsa",
  "sha2",
@@ -1982,8 +1962,8 @@ dependencies = [
  "flagset",
  "lazy_static",
  "p384",
- "pkcs1 0.7.5",
- "pkcs8 0.10.2",
+ "pkcs1",
+ "pkcs8",
  "rand",
  "rsa",
  "sha1",

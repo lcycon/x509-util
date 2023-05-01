@@ -34,4 +34,4 @@ x509-util = { path = "../x509-util" }
 xdg = "2.5.0"
 
 [build-dependencies]
-lalrpop = "0.19.10"
+lalrpop = "0.19.12"

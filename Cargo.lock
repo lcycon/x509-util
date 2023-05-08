@@ -755,7 +755,7 @@ dependencies = [
  "ena",
  "is-terminal",
  "itertools",
- "lalrpop-util 0.20.0",
+ "lalrpop-util",
  "petgraph",
  "pico-args",
  "regex",
@@ -765,12 +765,6 @@ dependencies = [
  "tiny-keccak",
  "unicode-xid",
 ]
-
-[[package]]
-name = "lalrpop-util"
-version = "0.19.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d3c48237b9604c5a4702de6b824e02006c3214327564636aef27c1028a8fa0ed"
 
 [[package]]
 name = "lalrpop-util"
@@ -1934,7 +1928,7 @@ dependencies = [
  "color-eyre",
  "ecdsa",
  "lalrpop",
- "lalrpop-util 0.19.12",
+ "lalrpop-util",
  "p256",
  "p384",
  "pkcs8",

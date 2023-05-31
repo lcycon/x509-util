@@ -13,7 +13,7 @@ rsa = ["dep:rsa"]
 
 [dependencies]
 async-trait = "0.1.68"
-chrono = "0.4.25"
+chrono = "0.4.26"
 clap = { version = "4.3.0", features = ["derive"] }
 clap_complete = "4.3.0"
 color-eyre = "0.6.2"

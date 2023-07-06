@@ -12,7 +12,7 @@ p384 = ["ecdsa", "dep:p384"]
 rsa = ["dep:rsa"]
 
 [dependencies]
-async-trait = "0.1.70"
+async-trait = "0.1.71"
 chrono = "0.4.26"
 clap = { version = "4.3.10", features = ["derive"] }
 clap_complete = "4.3.1"

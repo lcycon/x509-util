@@ -475,7 +475,7 @@ dependencies = [
  "elliptic-curve",
  "rfc6979",
  "signature",
- "spki 0.7.2",
+ "spki 0.7.3",
 ]
 
 [[package]]
@@ -990,7 +990,7 @@ checksum = "c8ffb9f10fa047879315e6625af03c164b16962a5368d724ed16323b68ace47f"
 dependencies = [
  "der 0.7.8",
  "pkcs8",
- "spki 0.7.2",
+ "spki 0.7.3",
 ]
 
 [[package]]
@@ -1000,7 +1000,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f950b2377845cebe5cf8b5165cb3cc1a5e0fa5cfa3e1f7f55707d8fd82e0a7b7"
 dependencies = [
  "der 0.7.8",
- "spki 0.7.2",
+ "spki 0.7.3",
 ]
 
 [[package]]
@@ -1171,7 +1171,7 @@ dependencies = [
  "pkcs8",
  "rand_core",
  "signature",
- "spki 0.7.2",
+ "spki 0.7.3",
  "subtle",
  "zeroize",
 ]
@@ -1285,9 +1285,9 @@ dependencies = [
 
 [[package]]
 name = "spki"
-version = "0.7.2"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d1e996ef02c474957d681f1b05213dfb0abab947b446a62d37770b23500184a"
+checksum = "d91ed6c858b01f942cd56b37a94b3e0a1798290327d1236e4d9cf4eaca44d29d"
 dependencies = [
  "base64ct",
  "der 0.7.8",
@@ -1752,7 +1752,7 @@ dependencies = [
  "rand_core",
  "rsa",
  "sha2",
- "spki 0.7.2",
+ "spki 0.7.3",
  "thiserror",
  "tokio",
  "tracing",
@@ -1791,7 +1791,7 @@ dependencies = [
  "rsa",
  "sha1",
  "sha2",
- "spki 0.7.2",
+ "spki 0.7.3",
  "thiserror",
  "tokio",
  "x509-cert",

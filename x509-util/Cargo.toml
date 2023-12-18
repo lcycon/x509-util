@@ -10,7 +10,7 @@ license = "Apache-2.0 OR MIT"
 async-trait = "0.1.74"
 bumpalo-herd = "0.1.2"
 chrono = "0.4.31"
-const-oid = { version = "0.9.5", features = ["db", "std"] }
+const-oid = { version = "0.9.6", features = ["db", "std"] }
 der = "0.7.8"
 flagset = "0.4.4"
 lazy_static = "1.4.0"

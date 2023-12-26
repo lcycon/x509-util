@@ -19,7 +19,7 @@ pkcs8 = { version = "0.10.2", features = ["pem"] }
 rand = "0.8.5"
 sha1 = "0.10.6"
 spki = { version = "0.7.3", features = ["alloc", "pem", "std"] }
-thiserror = "1.0.51"
+thiserror = "1.0.52"
 x509-cert = { version = "0.1.1", features = ["alloc", "pem", "std"] }
 
 [dev-dependencies]

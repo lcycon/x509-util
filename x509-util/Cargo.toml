@@ -7,7 +7,7 @@ authors = ["Luke Cycon"]
 license = "Apache-2.0 OR MIT"
 
 [dependencies]
-async-trait = "0.1.76"
+async-trait = "0.1.77"
 bumpalo-herd = "0.1.2"
 chrono = "0.4.31"
 const-oid = { version = "0.9.6", features = ["db", "std"] }

@@ -9,7 +9,7 @@ license = "Apache-2.0 OR MIT"
 [dependencies]
 async-trait = "0.1.77"
 bumpalo-herd = "0.1.2"
-chrono = "0.4.32"
+chrono = "0.4.33"
 const-oid = { version = "0.9.6", features = ["db", "std"] }
 der = "0.7.8"
 flagset = "0.4.4"

@@ -11,7 +11,7 @@ async-trait = "0.1.79"
 bumpalo-herd = "0.1.2"
 chrono = "0.4.37"
 const-oid = { version = "0.9.6", features = ["db", "std"] }
-der = "0.7.8"
+der = "0.7.9"
 flagset = "0.4.5"
 lazy_static = "1.4.0"
 pkcs1 = "0.7.5"

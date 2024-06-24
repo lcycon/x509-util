@@ -13,7 +13,7 @@ chrono = "0.4.38"
 const-oid = { version = "0.9.6", features = ["db", "std"] }
 der = "0.7.9"
 flagset = "0.4.5"
-lazy_static = "1.4.0"
+lazy_static = "1.5.0"
 pkcs1 = "0.7.5"
 pkcs8 = { version = "0.10.2", features = ["pem"] }
 rand = "0.8.5"

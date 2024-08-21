@@ -15,7 +15,7 @@ rsa = ["dep:rsa"]
 async-trait = "0.1.81"
 chrono = "0.4.38"
 clap = { version = "4.5.16", features = ["derive"] }
-clap_complete = "4.5.19"
+clap_complete = "4.5.20"
 color-eyre = "0.6.3"
 ecdsa = { version = "0.16.9", features = ["pem", "pkcs8"], optional = true }
 lalrpop-util = "0.20.0"

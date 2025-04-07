@@ -26,4 +26,4 @@ x509-cert = { version = "0.1.1", features = ["alloc", "pem", "std"] }
 p384 = "0.13.1"
 rsa = "0.9.8"
 sha2 = "0.10.8"
-tokio = { version = "1.44.1", features = ["rt-multi-thread", "macros"] }
+tokio = { version = "1.44.2", features = ["rt-multi-thread", "macros"] }

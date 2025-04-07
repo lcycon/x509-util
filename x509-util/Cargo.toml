@@ -12,7 +12,7 @@ bumpalo-herd = "0.1.2"
 chrono = "0.4.40"
 const-oid = { version = "0.9.6", features = ["db", "std"] }
 der = "0.7.9"
-flagset = "0.4.6"
+flagset = "0.4.7"
 lazy_static = "1.5.0"
 pkcs1 = "0.7.5"
 pkcs8 = { version = "0.10.2", features = ["pem"] }

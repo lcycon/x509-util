@@ -14,7 +14,7 @@ rsa = ["dep:rsa"]
 [dependencies]
 async-trait = "0.1.88"
 chrono = "0.4.41"
-clap = { version = "4.5.39", features = ["derive"] }
+clap = { version = "4.5.40", features = ["derive"] }
 clap_complete = "4.5.54"
 color-eyre = "0.6.5"
 ecdsa = { version = "0.16.9", features = ["pem", "pkcs8"], optional = true }

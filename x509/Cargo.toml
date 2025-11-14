@@ -23,7 +23,7 @@ p256 = { version = "0.13.2", features = ["pem"], optional = true }
 p384 = { version = "0.13.1", features = ["pem"], optional = true }
 pkcs8 = { version = "0.10.2", features = ["pem", "std"] }
 rand_core = "0.9.3"
-rsa = { version = "0.9.8", optional = true }
+rsa = { version = "0.9.9", optional = true }
 sha2 = { version = "0.10.9", features = ["oid"] }
 spki = "0.7.3"
 thiserror = "2.0.17"

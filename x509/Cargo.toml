@@ -22,7 +22,7 @@ lalrpop-util = "0.20.0"
 p256 = { version = "0.13.2", features = ["pem"], optional = true }
 p384 = { version = "0.13.1", features = ["pem"], optional = true }
 pkcs8 = { version = "0.10.2", features = ["pem", "std"] }
-rand_core = "0.9.3"
+rand_core = "0.9.4"
 rsa = { version = "0.9.10", optional = true }
 sha2 = { version = "0.10.9", features = ["oid"] }
 spki = "0.7.3"
